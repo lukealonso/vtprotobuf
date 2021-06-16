@@ -7,7 +7,7 @@ go_proto_compiler(
         "paths=source_relative",
     ],
     plugin = ":protoc-gen-go-vtproto",
-    suffix = ".pb.ros.go",
+    suffix = ".pb.vt.go",
     visibility = ["//visibility:public"],
 )
 
