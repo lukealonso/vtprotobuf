@@ -52,7 +52,7 @@ func main() {
 var SupportedFeatures = uint64(pluginpb.CodeGeneratorResponse_FEATURE_PROTO3_OPTIONAL)
 
 func generateAllFiles(plugin *protogen.Plugin, featureNames []string, poolable ObjectSet) error {
-	ext := &generator.Extensions{Poolable: true}
+	ext := &generator.Extensions{Poolable: poolable}
 	gen, err := generator.NewGenerator(plugin.Files, featureNames, ext)
 	if err != nil {
 		return err
