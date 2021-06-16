@@ -1,0 +1,13 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+load("@io_bazel_rules_go//proto:compiler.bzl", "go_proto_compiler")
+
+go_proto_compiler(
+    name = "go_proto_vtproto",
+    options = [
+        "paths=source_relative",
+    ],
+    plugin = ":protoc-gen-go-vtproto",
+    suffix = ".pb.ros.go",
+    visibility = ["//visibility:public"],
+)
+
