@@ -31,6 +31,9 @@ func (b *GeneratedFile) ShouldPool(message *protogen.Message) bool {
 	if b.Ext.Poolable[message.GoIdent] {
 		return true
 	}
+	if message.GoIdent == "AVMessage" {
+		return true
+	}
 	ext := proto.GetExtension(message.Desc.Options(), vtproto.E_Mempool)
 	if mempool, ok := ext.(bool); ok {
 		return mempool
